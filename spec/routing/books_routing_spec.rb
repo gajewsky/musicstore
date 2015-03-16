@@ -1,34 +1,34 @@
 require "rails_helper"
 
-RSpec.describe BooksController, type: :routing do
+RSpec.describe AlbumsController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/books").to route_to("books#index")
+      expect(:get => "/albums").to route_to("albums#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/books/new").to route_to("books#new")
+      expect(:get => "/albums/new").to route_to("albums#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/books/1").to route_to("books#show", :id => "1")
+      expect(:get => "/albums/1").to route_to("albums#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/books/1/edit").to route_to("books#edit", :id => "1")
+      expect(:get => "/albums/1/edit").to route_to("albums#edit", :id => "1")
     end
 
     it "routes to #create" do
-      expect(:post => "/books").to route_to("books#create")
+      expect(:post => "/albums").to route_to("albums#create")
     end
 
     it "routes to #update" do
-      expect(:put => "/books/1").to route_to("books#update", :id => "1")
+      expect(:put => "/albums/1").to route_to("albums#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/books/1").to route_to("books#destroy", :id => "1")
+      expect(:delete => "/albums/1").to route_to("albums#destroy", :id => "1")
     end
 
   end

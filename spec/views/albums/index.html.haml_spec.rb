@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "books/index", type: :view do
+RSpec.describe "albums/index", type: :view do
   before(:each) do
-    assign(:books, [
-      Book.create!(
+    assign(:albums, [
+      Album.create!(
         :name => "Name",
         :author => "Author",
         :description => "MyText",
         :price => 1,
         :availability => false
       ),
-      Book.create!(
+      Album.create!(
         :name => "Name",
         :author => "Author",
         :description => "MyText",
@@ -20,7 +20,7 @@ RSpec.describe "books/index", type: :view do
     ])
   end
 
-  it "renders a list of books" do
+  it "renders a list of albums" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Author".to_s, :count => 2

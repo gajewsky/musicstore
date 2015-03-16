@@ -1,6 +1,6 @@
-class CreateBooks < ActiveRecord::Migration
+class CreateAlbums < ActiveRecord::Migration
   def change
-    create_table :books do |t|
+    create_table :albums do |t|
       t.string :name
       t.string :author
       t.text :description

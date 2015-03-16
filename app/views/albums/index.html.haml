@@ -1,0 +1,29 @@
+%h1 Listing jsons
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Author
+      %th Description
+      %th Price
+      %th Availability
+      %th
+      %th
+      %th
+
+  %tbody
+    - @albums.each do |album|
+      %tr
+        %td= album.name
+        %td= album.author
+        %td= album.description
+        %td= album.price
+        %td= album.availability
+        %td= link_to 'Show', album
+        %td= link_to 'Edit', edit_album_path(album)
+        %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New album', new_album_path

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :book do
+  factory :album do
     name "MyString"
 author "MyString"
 description "MyText"
