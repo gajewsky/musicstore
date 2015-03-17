@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "albums/show", type: :view do
+RSpec.describe 'albums/show', type: :view do
   before(:each) do
     @album = assign(:album, Album.create!(
-      :name => "Name",
-      :author => "Author",
-      :description => "MyText",
-      :price => 1,
-      :availability => false
+                              name: 'Name',
+                              author: 'Author',
+                              description: 'MyText',
+                              price: 1,
+                              availability: false
     ))
   end
 

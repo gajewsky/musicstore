@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   respond_to :html, :json
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!,
+                only: [:new, :edit, :create, :update, :destroy]
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,7 +13,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    respond_with(@album)  
+    respond_with(@album)
   end
 
   def edit
@@ -22,27 +23,29 @@ class AlbumsController < ApplicationController
   def create
     @album = current_user.albums.new(album_params)
     @album.save
-    respond_with(@album)   
+    respond_with(@album)
   end
 
   def update
     authorize! :manage, @album
     @album.update(album_params)
-    respond_with(@album)    
+    respond_with(@album)
   end
 
   def destroy
     authorize! :manage, @album
     @album.destroy
-    respond_with(@album)  
+    respond_with(@album)
   end
 
   private
-    def set_album
-      @album = Album.find(params[:id])
-    end
 
-    def album_params
-      params.require(:album).permit(:name, :author, :description, :price, :availability)
-    end
+  def set_album
+    @album = Album.find(params[:id])
+  end
+
+  def album_params
+    params.require(:album)
+      .permit(:name, :author, :description, :price, :availability)
+  end
 end

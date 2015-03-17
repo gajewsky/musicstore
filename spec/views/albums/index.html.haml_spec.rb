@@ -1,31 +1,31 @@
 require 'rails_helper'
 
-RSpec.describe "albums/index", type: :view do
+RSpec.describe 'albums/index', type: :view do
   before(:each) do
     assign(:albums, [
       Album.create!(
-        :name => "Name",
-        :author => "Author",
-        :description => "MyText",
-        :price => 1,
-        :availability => false
+        name: 'Name',
+        author: 'Author',
+        description: 'MyText',
+        price: 1,
+        availability: false
       ),
       Album.create!(
-        :name => "Name",
-        :author => "Author",
-        :description => "MyText",
-        :price => 1,
-        :availability => false
+        name: 'Name',
+        author: 'Author',
+        description: 'MyText',
+        price: 1,
+        availability: false
       )
     ])
   end
 
-  it "renders a list of albums" do
+  it 'renders a list of albums' do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Author".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => false.to_s, :count => 2
+    assert_select 'tr>td', text: 'Name'.to_s, count: 2
+    assert_select 'tr>td', text: 'Author'.to_s, count: 2
+    assert_select 'tr>td', text: 'MyText'.to_s, count: 2
+    assert_select 'tr>td', text: 1.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
   end
 end
