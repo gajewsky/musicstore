@@ -16,8 +16,9 @@
 class Album < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  
+
   belongs_to :user
+  has_many :sales
   has_attached_file :image
   has_attached_file :resource
 
@@ -27,8 +28,11 @@ class Album < ActiveRecord::Base
 
   validates_attachment_content_type :resource,
                                     content_type: ['application/zip'],
-                                    message: 'Only zip(enums) { |row|  } allowed'
+                                    message: 'Only zips allowed'
 
   validates :image, attachment_presence: true
   validates :resource, attachment_presence: true
+  validates :price, numericality: { greater_than: 49,
+                                    message: 'must be at least 50 cents'
+                                  }
 end
