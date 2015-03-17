@@ -16,6 +16,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    authorize! :manage, @album
   end
 
   def create
@@ -25,11 +26,13 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    authorize! :manage, @album
     @album.update(album_params)
     respond_with(@album)    
   end
 
   def destroy
+    authorize! :manage, @album
     @album.destroy
     respond_with(@album)  
   end
