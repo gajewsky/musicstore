@@ -1,0 +1,8 @@
+.col-md-3
+  .thumbnail
+    = link_to album_path(album) do
+      = image_tag 'cover.jpg', class: 'img-responsive'
+      .caption
+        %h3.text-center
+          = album.name
+        %p.text-center $#{album.price}

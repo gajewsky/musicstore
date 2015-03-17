@@ -1,10 +1,12 @@
 .row
   .col-md-6
-    = image_tag "Game_of_thrones.jpeg", class: "img-responsive"
+    = image_tag "cover.jpg", class: "img-responsive"
   .col-md-6
     %h3 #{@album.name} by #{@album.author}
     %p
       = @album.description
+    %h4.text-center 
+      = @album.price / 100.0
 
 = link_to 'Edit', edit_album_path(@album)
 \|
