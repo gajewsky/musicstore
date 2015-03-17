@@ -16,6 +16,7 @@ gem 'paperclip', '~> 4.2'
 gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
 gem 'aws-sdk'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'dotenv-rails'

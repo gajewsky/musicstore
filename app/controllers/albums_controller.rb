@@ -41,7 +41,7 @@ class AlbumsController < ApplicationController
   private
 
   def set_album
-    @album = Album.find(params[:id])
+    @album = Album.friendly.find(params[:id])
   end
 
   def album_params
