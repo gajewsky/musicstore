@@ -1,0 +1,17 @@
+%h3.text-center My Sales
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Date
+      %th Buyer
+  %tbody
+    - @sales.each do |sale|
+      %tr
+        %td
+          = link_to sale.album.name, pickup_path(sale.guid)
+        %td
+          = sale.created_at
+        %td
+          = sale.buyer_email
+        
