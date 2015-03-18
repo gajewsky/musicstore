@@ -16,5 +16,20 @@
 require 'rails_helper'
 
 RSpec.describe Album, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a valid factory' do
+    expect(FactoryGirl.build(:album)).to be_valid
+  end
+  
+  it { is_expected.to have_db_column(:id).of_type(:integer) }
+  it { is_expected.to have_db_column(:name).of_type(:string) }
+  it { is_expected.to have_db_column(:author).of_type(:string) }
+  it { is_expected.to have_db_column(:description).of_type(:text) }
+  it { is_expected.to have_db_column(:price).of_type(:integer) }
+  it { is_expected.to have_db_column(:availability).of_type(:boolean) }
+
+  it { is_expected.to have_many :sales }
+  it { is_expected.to belong_to :user }
+
+  it { is_expected.to validate_presence_of(:image) }
+  it { is_expected.to validate_presence_of(:resource) }
 end
