@@ -1,5 +1,5 @@
-%h3.text-center My Albums #{link_to 'new album', new_album_path, class: 'btn btn-primary'}
-%table.table.table-hover
+%h3.text-center My Albums 
+%table.table.table-hover.table-bordered
   %thead
     %tr
       %th ID
@@ -17,3 +17,4 @@
           = album.availability
         %td
           = link_to 'Edit', edit_album_path(album)
+=link_to 'new album', new_album_path, class: 'btn btn-primary'

@@ -3,6 +3,7 @@
     = link_to album_path(album) do
       = image_tag album.image.url(:original), class: 'img-responsive'
       .caption
-        %h3.text-center
-          = album.name
+        %h4.text-center
+          %strong
+            = album.name
         %p.text-center $#{album.price / 100.0}
