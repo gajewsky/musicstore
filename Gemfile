@@ -17,6 +17,7 @@ gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap
 gem 'simple_form'
 gem 'aws-sdk'
 gem 'friendly_id'
+gem 'stripe'
 
 group :development, :test do
   gem 'dotenv-rails'
