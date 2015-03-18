@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'aws-sdk'
 gem 'friendly_id'
 gem 'stripe'
+gem 'aasm'
 
 group :development, :test do
   gem 'dotenv-rails'

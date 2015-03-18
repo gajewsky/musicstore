@@ -12,6 +12,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.1.0)
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -305,6 +306,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   annotate (~> 2.6.6)
   aws-sdk
   better_errors (~> 2.1.1)
