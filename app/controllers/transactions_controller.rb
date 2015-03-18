@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
       redirect_to pickup_url(guid: @sale.guid)
     rescue Stripe::CardError => e
       @error = e
-      redirect_to album_path(album), notice @error
+      redirect_to album_path(album), notice: @error
     end
   end
 

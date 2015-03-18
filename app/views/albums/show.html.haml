@@ -8,6 +8,17 @@
     %h4.text-center 
       = @album.price / 100.0
 
+  - if current_user
+    = form_tag buy_path(slug: @album.slug) do
+      %script.stripe-button{ src: "https://checkout.stripe.com/checkout.js",
+                             data:{ amount: @album.price, 
+                                    description: @album.name,
+                                    email: current_user.email, 
+                                    key: Rails.configuration.stripe[:publishable_key], 
+                                    name: "musicstore"}}
+  - else
+    %p Please Login First to Buy
+
 = link_to 'Edit', edit_album_path(@album)
 \|
 = link_to 'Back', albums_path
