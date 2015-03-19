@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: sales
+#
+#  id           :integer          not null, primary key
+#  buyer_email  :string
+#  seller_email :string
+#  amount       :integer
+#  guid         :string
+#  album_id     :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  state        :string
+#  stripe_id    :string
+#  stripe_token :string
+#  error        :text
+#
+
 class Sale < ActiveRecord::Base
   before_create :generate_guid
   belongs_to :album

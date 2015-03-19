@@ -8,7 +8,7 @@ RSpec.describe AlbumsController, type: :controller do
   let(:invalid_attributes) do
     skip('Add a hash of attributes invalid for your model')
   end
-  
+
   let(:valid_session) { {} }
 
   describe 'GET #index' do
